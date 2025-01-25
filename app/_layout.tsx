@@ -25,9 +25,7 @@ export default function RootLayout() {
 		}
 	}, [loaded]);
 
-	if (!loaded || !colorModeIsloaded) {
-		return null;
-	}
+	if (!loaded || !colorModeIsloaded) return null;
 
 	return (
 		<QueryClientProvider client={queryClient}>
