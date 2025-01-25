@@ -5,7 +5,7 @@ import { ContentPlaceholder } from "@/components/content-placeholder";
 import { Header } from "@/components/header";
 import { SearchInput } from "@/components/search-input";
 import { SelectContent } from "@/components/select-content";
-import { type CharacterFilter, fetchAllCharacters } from "@/lib/api/characters";
+import { type CharacterFilter, fetchAllCharacters } from "@/lib/services/characters";
 import { getNextPageParam, normalizePages } from "@/utils/infinite-query";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useState } from "react";

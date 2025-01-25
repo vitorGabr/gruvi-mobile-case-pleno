@@ -1,4 +1,4 @@
-import type { Character } from "@/lib/api/characters";
+import type { Character } from "@/lib/services/characters";
 import { cn } from "@/utils/cn";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";

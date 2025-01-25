@@ -1,4 +1,4 @@
-import type { PaginateQuery } from "@/lib/api/types";
+import type { PaginateQuery } from "@/lib/services/types";
 import type { GetPreviousPageParamFunction } from "@tanstack/react-query";
 
 const regex = /[\?&]page=(\d+)/;

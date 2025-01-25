@@ -1,4 +1,4 @@
-import type { PaginateQuery } from "@/lib/api/types";
+import type { PaginateQuery } from "@/lib/services/types";
 import { getNextPageParam, normalizePages } from "../infinite-query"; // Atualize o caminho do módulo
 
 describe("normalizePages", () => {

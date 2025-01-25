@@ -3,15 +3,12 @@ import { client } from "../common";
 import type { PaginateQuery } from "../types";
 import type { Character, CharacterFilter } from "./types";
 
-export type FetchCharactersVariables = {
+type Variables = {
 	filter?: CharacterFilter;
 	page?: number;
 };
 
-export const fetchAllCharacters = async ({
-	page,
-	filter,
-}: FetchCharactersVariables) => {
+export const fetchAllCharacters = async ({ page, filter }: Variables) => {
 	return client
 		.get("character", { searchParams: createSearchParams({ page, ...filter }) })
 		.json<PaginateQuery<Character>>();

@@ -1,7 +1,7 @@
 import { CharacterLabel } from "@/components/character-label";
 import { FavoriteItem } from "@/components/favorite-item";
 import { useFavorites } from "@/hooks/use-favorites";
-import { fetchCharacterById } from "@/lib/api/characters/fetch-by-id";
+import { fetchCharacterById } from "@/lib/services/characters/fetch-by-id";
 import { cn } from "@/utils/cn";
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";

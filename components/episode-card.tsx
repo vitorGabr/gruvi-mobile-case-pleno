@@ -1,4 +1,4 @@
-import type { Episode } from "@/lib/api/episode";
+import type { Episode } from "@/lib/services/episode";
 import { memo } from "react";
 import { Text, View } from "react-native";
 import { FavoriteItem } from "./favorite-item";

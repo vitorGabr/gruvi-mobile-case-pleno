@@ -11,7 +11,7 @@
 		"**/*.tsx",
 		".expo/types/**/*.ts",
 		"expo-env.d.ts",
-		"lib/api/characters/fetch-all.ts",
+		"lib/services/characters/fetch-all.ts",
 		"nativewind-env.d.ts"
 	]
 }

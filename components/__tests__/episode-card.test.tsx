@@ -1,4 +1,4 @@
-import type { Episode } from "@/lib/api/episode";
+import type { Episode } from "@/lib/services/episode";
 import { fireEvent, render } from "@testing-library/react-native";
 import React from "react";
 import { Button } from "react-native";

@@ -3,7 +3,7 @@ import { EpisodeCard } from "@/components/episode-card";
 import { Header } from "@/components/header";
 import { SearchInput } from "@/components/search-input";
 import { useFavorites } from "@/hooks/use-favorites";
-import { type EpisodeFilter, fetchAllEpisodes } from "@/lib/api/episode";
+import { type EpisodeFilter, fetchAllEpisodes } from "@/lib/services/episode";
 import { getNextPageParam, normalizePages } from "@/utils/infinite-query";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useState } from "react";
