@@ -37,25 +37,26 @@ export default function CharacterIdScreen() {
 			</SafeAreaView>
 		);
 	}
-
 	return (
 		<View className="bg-background flex-1">
+			<Stack.Screen
+				options={{
+					title: "",
+					headerRight: () =>{
+						return (
+							<FavoriteItem
+								testID="favorite-header-favorite"
+								favorite={favorites.includes(id)}
+								toggleFavorite={() => {
+									toggleFavorite(id);
+								}}
+							/>
+						);
+					},
+				}}
+			/>
 			<ScrollView>
 				<View className="flex-1 items-center gap-6">
-					<Stack.Screen
-						options={{
-							title: "",
-							headerRight(props) {
-								return (
-									<FavoriteItem
-										testID="favorite-header-favorite"
-										favorite={favorites.includes(id)}
-										toggleFavorite={() => toggleFavorite(id)}
-									/>
-								);
-							},
-						}}
-					/>
 					<Image
 						className={cn("rounded-l2 border-4 w-60 h-60 mt-6", {
 							"border-green-500 dark:border-green-300":

@@ -85,7 +85,7 @@ export default function CharacterScreen() {
 					/>
 				)}
 				ListFooterComponent={() => {
-					if (!isFetchingNextPage) return null;
+					if (!isFetchingNextPage || isLoading) return null;
 					return <ActivityIndicator size="large" />;
 				}}
 			/>

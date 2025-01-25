@@ -11,8 +11,8 @@ import { useLoadColorMode } from "@/hooks/use-load-color-mode";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 SplashScreen.preventAutoHideAsync();
+const queryClient = new QueryClient();
 
-export const queryClient = new QueryClient();
 export default function RootLayout() {
 	const colorModeIsloaded = useLoadColorMode();
 	const [loaded] = useFonts({

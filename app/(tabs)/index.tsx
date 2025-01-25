@@ -52,7 +52,7 @@ export default function HomeScreen() {
 					/>
 				)}
 				ListFooterComponent={() => {
-					if (!episodes.isFetchingNextPage) return null;
+					if (!episodes.isFetchingNextPage || episodes.isLoading) return null;
 					return <ActivityIndicator size="large" />;
 				}}
 			/>

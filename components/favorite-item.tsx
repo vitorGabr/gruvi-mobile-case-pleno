@@ -21,7 +21,7 @@ export function FavoriteItem({
 	toggleFavorite,
 }: FavoriteItemProps) {
 	return (
-		<TouchableOpacity className="p-2" testID={testID} onPress={toggleFavorite}>
+		<TouchableOpacity className="p-2" testID={testID} onPressIn={toggleFavorite}>
 			<MaterialIcons
 				testID={`${testID}-icon-${favorite ? "favorite" : "favorite-border"}`}
 				name={favorite ? "favorite" : "favorite-border"}
