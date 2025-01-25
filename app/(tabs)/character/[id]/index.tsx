@@ -5,7 +5,7 @@ import { fetchCharacterById } from "@/lib/services/characters/fetch-by-id";
 import { cn } from "@/utils/cn";
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
-import { Stack, useGlobalSearchParams } from "expo-router";
+import { Redirect, Stack, useGlobalSearchParams } from "expo-router";
 import {
 	ActivityIndicator,
 	Image,
@@ -18,7 +18,7 @@ import {
 export default function CharacterIdScreen() {
 	const { id } = useGlobalSearchParams<{ id: string }>();
 	const { favorites, toggleFavorite } = useFavorites("characters");
-	const { data, isLoading } = useQuery({
+	const { data, isLoading, isError } = useQuery({
 		queryKey: ["character", id],
 		queryFn: () => fetchCharacterById(id),
 	});
@@ -37,12 +37,17 @@ export default function CharacterIdScreen() {
 			</SafeAreaView>
 		);
 	}
+
+	if (isError) {
+		return <Redirect href="/(tabs)/character" />;
+	}
+
 	return (
 		<View className="bg-background flex-1">
 			<Stack.Screen
 				options={{
 					title: "",
-					headerRight: () =>{
+					headerRight: () => {
 						return (
 							<FavoriteItem
 								testID="favorite-header-favorite"
