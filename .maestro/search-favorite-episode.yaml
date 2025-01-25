@@ -1,0 +1,21 @@
+appId: com.teste.app
+
+---
+- openLink: "exp://192.168.0.103:8081"
+- extendedWaitUntil:
+    visible: 
+        id: "episode-list"
+    timeout: 10000
+- tapOn:
+    id: "favorite-button-6"
+- assertVisible:
+    id: "favorite-button-6-icon-favorite"
+- tapOn:
+    id: "search-input"
+- inputText:
+    text: "Rick"
+- hideKeyboard
+- extendedWaitUntil:
+    visible: 
+        id: "episode-list"
+    timeout: 10000

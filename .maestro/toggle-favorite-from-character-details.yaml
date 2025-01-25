@@ -1,0 +1,20 @@
+appId: "com.teste.app"
+
+---
+- openLink: "exp://192.168.0.103:8081"
+- tapOn:
+    id: "character-tab"
+- extendedWaitUntil:
+    visible: 
+        id: "character-list"
+    timeout: 10000
+- tapOn:
+    id: "character-card-1"
+- extendedWaitUntil:
+    visible:
+        id: "favorite-header-favorite"
+    timeout: 10000
+- tapOn:
+    id: "favorite-header-favorite"
+- assertVisible:
+    id: "favorite-header-favorite-icon-favorite"

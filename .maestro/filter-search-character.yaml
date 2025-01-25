@@ -1,0 +1,19 @@
+appId: com.teste.app
+
+---
+- openLink: "exp://192.168.0.103:8081"
+- tapOn:
+    id: "character-tab"
+- extendedWaitUntil:
+    visible: 
+        id: "character-list"
+    timeout: 10000
+- tapOn:
+    id: "search-input"
+- inputText:
+    text: "Rick"
+- hideKeyboard
+- tapOn:
+    id: select-content-Espécie
+- tapOn:
+    id: select-content-option-human
