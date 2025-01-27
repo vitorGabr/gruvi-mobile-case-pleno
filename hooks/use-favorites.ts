@@ -11,11 +11,8 @@ export const useFavorites = (storageKey: "episodes" | "characters") => {
 	const loadFavorites = async () => {
 		try {
 			const storedFavorites = await getItem<string[]>(storageKey);
-			if (Array.isArray(storedFavorites)) {
-				setFavorites(storedFavorites);
-				return;
-			}
-			setFavorites([]);
+			const content = Array.isArray(storedFavorites) ? storedFavorites : [];
+			setFavorites(content);
 		} catch (error) {
 			setFavorites([]);
 			console.error("Erro ao carregar favoritos:", error);
@@ -25,12 +22,9 @@ export const useFavorites = (storageKey: "episodes" | "characters") => {
 	const toggleFavorite = useCallback(
 		async (itemId: string) => {
 			try {
-				let updatedFavorites = [];
-				if (favorites.includes(itemId)) {
-					updatedFavorites = favorites.filter((fav) => fav !== itemId);
-				} else {
-					updatedFavorites = [...favorites, itemId];
-				}
+				const updatedFavorites = favorites.includes(itemId)
+					? favorites.filter((id) => id !== itemId)
+					: [...favorites, itemId];
 				setFavorites(updatedFavorites);
 				await setItem(storageKey, updatedFavorites);
 			} catch (error) {
